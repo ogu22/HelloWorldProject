@@ -19,7 +19,7 @@
 <body>
     <div class="container">
         <div class="row">
-            <p><h1 id="title">ログイン</h1></p>
+            <p><center><h1 id="title">ログイン</h1></center></p>
         </div>
         <div class="row">
             <div class="col-md-3 col-lg-3"></div>
@@ -27,17 +27,22 @@
                 <div class="well well-sm">
                     <form id="login_form" method="post" th:action="@{'/login'}">
                         <fieldset id="login_field">
-                            <div class="form-group">
+                            <div class="form-group" align="center">
                                 <label>ログインID</label>
                                 <input type="text" class="form-control" id="login_id" name="login_id" placeholder="ログインIDを入力してください" autofocus="" required="" />
                             </div>
-                            <div class="form-group">
+                            <div class="form-group" align="center">
                                 <label>パスワード</label>
                                 <input type="password" class="form-control" id="login_password" name="login_password" placeholder="パスワードを入力してください" required="" />
                             </div>
-                            <div class="form-group">
+                            <div class="form-group" align="center">
                                 <input id="login_button" type="submit" value="ログイン" />
                             </div>
+                            <div class="form-group" align="center">
+                            <input type="checkbox" name="kioku" value="1" checked="checked">ログイン情報を記憶する
+                            </div>
+                            <center><a href="#">パスワードを忘れた方</a></center>
+                            <center><a href="#">新規登録はこちら</a></center>
                         </fieldset>
                     </form>
                 </div>
