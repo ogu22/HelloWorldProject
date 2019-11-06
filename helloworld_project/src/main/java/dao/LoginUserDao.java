@@ -6,7 +6,7 @@ import javax.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import login.app.entity.LoginUser;
+import entity.LoginUser;
 
 /**
  * DBへのアクセスメソッドを呼び出すDao

@@ -14,8 +14,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import login.app.dao.LoginUserDao;
-import login.app.entity.LoginUser;
+import dao.LoginUserDao;
+import entity.LoginUser;
 
 /**
  * Spring Securityのユーザ検索用のサービスの実装クラス
@@ -61,4 +61,4 @@ public class UserDetailsServiceImpl implements UserDetailsService{
 	}
 
 }
-}
+
