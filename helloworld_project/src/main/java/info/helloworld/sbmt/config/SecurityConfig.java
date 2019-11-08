@@ -3,47 +3,65 @@ package info.helloworld.sbmt.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.thymeleaf.extras.springsecurity4.dialect.SpringSecurityDialect;
-import org.thymeleaf.spring5.SpringTemplateEngine;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
+import info.helloworld.sbmt.service.SearchUser;
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-	private static String ROLE_USER = "USER";
-	private static String ROLE_ADMIN = "ADMIN";
-	
-	@Autowired
-//	public TemplateResolver templateResolver;
 
-	@Override
-    public void configure(WebSecurity web) {
-        // 静的リソースに対するアクセスはセキュリティ設定を無視する
-        web.ignoring()
-                .antMatchers("/*.html", "/*.css")
-                .antMatchers("/bootstrap/**");
+
+    @Autowired
+    private SearchUser searchUserService;
+
+    //フォームの値と比較するDBから取得したパスワードは暗号化されているのでフォームの値も暗号化するために利用
+    @Bean
+    public BCryptPasswordEncoder passwordEncoder() {
+        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+        return bCryptPasswordEncoder;
     }
-	@Override
-	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers("/user").hasAnyRole(ROLE_USER, ROLE_ADMIN).antMatchers("/admin")
-				.hasRole(ROLE_ADMIN).and()
 
-				.formLogin().loginPage("/login").defaultSuccessUrl("/user").usernameParameter("username")
-				.passwordParameter("password").permitAll().and()
+    @Override
+    public void configure(WebSecurity web) {
+        web.ignoring().antMatchers(
+                            "/images/**",
+                            "/css/**",
+                            "/javascript/**"
+                            );
+    }
 
-				.logout().permitAll().and()
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http
+            .authorizeRequests()
+                .anyRequest().authenticated()
+                .and()
+            .formLogin()
+                .loginPage("/login") //ログインページはコントローラを経由しないのでViewNameとの紐付けが必要
+                .loginProcessingUrl("/sign_in") //フォームのSubmitURL、このURLへリクエストが送られると認証処理が実行される
+                .usernameParameter("userid") //リクエストパラメータのname属性を明示
+                .passwordParameter("password")
+                .successForwardUrl("/index")
+                .failureUrl("/login?error")
+                .permitAll()
+                .and()
+            .logout()
+                .logoutUrl("/logout")
+                .logoutSuccessUrl("/login?logout")
+                .permitAll();
+    }
 
-				.csrf();
-	}
+    @Autowired
+    public void configure(AuthenticationManagerBuilder auth) throws Exception{
+        auth
+            .inMemoryAuthentication()
+                .withUser("userid").password("{noop}password").roles("USER");
+    }
 
-	@Bean
-	public SpringTemplateEngine templateEngine() {
-	    SpringTemplateEngine engine = new SpringTemplateEngine();
-	    engine.addDialect(new SpringSecurityDialect());
-//	    engine.setTemplateResolver(templateResolver);
-	    return engine;
-	}
 }
