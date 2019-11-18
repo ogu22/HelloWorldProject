@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"></meta>
+<title>Sign Up</title>
+</head>
+<body>
+	<div>
+		<div align="center">
+			<h1>会員登録</h1>
+		</div>
+		<form th:action="@{/signup}" method="post">
+			<table align="center">
+				<tr>
+					<th>ユーザーID(学籍番号)</th>
+					<td>
+						<div>
+							<input type="text" />
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th>パスワード</th>
+					<td>
+						<div>
+							<input type="text" />
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th>クラス</th>
+					<td>
+						<div>
+							<select name="example">
+								<option value="サンプル1">R4</option>
+								<option value="サンプル2"></option>
+								<option value="サンプル3"></option>
+							</select>
+						</div>
+					</td>
+					<th>番号</th>
+					<td>
+						<div>
+							<select name="example">
+								<option value="サンプル1">1</option>
+								<option value="サンプル2">2</option>
+								<option value="サンプル3"></option>
+							</select>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th>名前</th>
+					<td>
+						<div>
+							<input type="text" />
+						</div>
+					</td>
+				</tr>
+			</table>
+			<center><button type="submit">登録</button></center>>
+		</form>
+	</div>
+</body>
+</html>
