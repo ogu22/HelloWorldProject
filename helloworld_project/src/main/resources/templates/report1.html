@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"></meta>
+<title>受験報告書記入画面</title>
+</head>
+<body>
+	<div>
+		<div align="center">
+			<h1>受験報告書</h1>
+		</div>
+		<form th:action="@{/signup}" method="post">
+			<table align="center">
+				<tr>
+					<th>申請日</th>
+					<td>
+						<div>
+							<input type="date" name="calendar" max="9999-12-31">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th>報告日</th>
+					<td>
+						<div>
+							<input type="date" name="calendar" max="9999-12-31">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th>企業名</th>
+					<td>
+						<div>
+							<input type="text" />
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th>情報仕入れ場所</th>
+					<td>
+						<div>
+							<select name="joho">
+								<option value="サンプル1">学校斡旋</option>
+								<option value="サンプル2">斡旋サイト</option>
+								<option value="サンプル3">企業HP</option>
+								<option value="サンプル4">新聞・雑誌</option>
+								<option value="サンプル5">ジョブカフェ等</option>
+								<option value="サンプル6">その他</option>
+							</select>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th>開催日時</th>
+					<td>
+						<div>
+							<input type="date" name="calendar" max="9999-12-31"> <select
+								name="selectedate-h" id="selectedate-h">
+								<option value="00">00</option>
+								<option value="01">01</option>
+								<option value="02">02</option>
+								<option value="03">03</option>
+								<option value="04">04</option>
+								<option value="05">05</option>
+								<option value="06">06</option>
+								<option value="07">07</option>
+								<option value="08">08</option>
+								<option value="09">09</option>
+								<option value="10">10</option>
+								<option value="11">11</option>
+								<option value="12">12</option>
+								<option value="13">13</option>
+								<option value="14">14</option>
+								<option value="15">15</option>
+								<option value="16">16</option>
+								<option value="17">17</option>
+								<option value="18">18</option>
+								<option value="19">19</option>
+								<option value="20">20</option>
+								<option value="21">21</option>
+								<option value="22">22</option>
+								<option value="23">23</option>
+							</select> <select name="selectedate-m" id="selectedate-m">
+								<option value="00">00</option>
+								<option value="01">01</option>
+								<option value="02">02</option>
+								<option value="03">03</option>
+								<option value="04">04</option>
+								<option value="05">05</option>
+								<option value="06">06</option>
+								<option value="07">07</option>
+								<option value="08">08</option>
+								<option value="09">09</option>
+								<option value="10">10</option>
+								<option value="11">11</option>
+								<option value="12">12</option>
+								<option value="13">13</option>
+								<option value="14">14</option>
+								<option value="15">15</option>
+								<option value="16">16</option>
+								<option value="17">17</option>
+								<option value="18">18</option>
+								<option value="19">19</option>
+								<option value="20">20</option>
+								<option value="21">21</option>
+								<option value="22">22</option>
+								<option value="23">23</option>
+								<option value="24">24</option>
+								<option value="25">25</option>
+								<option value="26">26</option>
+								<option value="27">27</option>
+								<option value="28">28</option>
+								<option value="29">29</option>
+								<option value="30">30</option>
+								<option value="31">31</option>
+								<option value="32">32</option>
+								<option value="33">33</option>
+								<option value="34">34</option>
+								<option value="35">35</option>
+								<option value="36">36</option>
+								<option value="37">37</option>
+								<option value="38">38</option>
+								<option value="39">39</option>
+								<option value="40">40</option>
+								<option value="41">41</option>
+								<option value="42">42</option>
+								<option value="43">43</option>
+								<option value="44">44</option>
+								<option value="45">45</option>
+								<option value="46">46</option>
+								<option value="47">47</option>
+								<option value="48">48</option>
+								<option value="49">49</option>
+								<option value="50">50</option>
+								<option value="51">51</option>
+								<option value="52">52</option>
+								<option value="53">53</option>
+								<option value="54">54</option>
+								<option value="55">55</option>
+								<option value="56">56</option>
+								<option value="57">57</option>
+								<option value="58">58</option>
+								<option value="59">59</option>
+							</select>
+						</div>
+					</td>
+				<tr>
+					<th>受験場所</th>
+					<td>
+						<div>
+							<input type="text" />
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th>会場</th>
+					<td>
+						<div>
+							<select name="joho">
+								<option value="サンプル1">会社（札幌）</option>
+								<option value="サンプル2">外会社（札幌）</option>
+								<option value="サンプル3">会社（東京）</option>
+								<option value="サンプル4">外会場（東京）</option>
+								<option value="サンプル5">その他</option>
+							</select>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th>試験</th>
+					<td>
+						<div>
+							<select name="test">
+								<option value="サンプル1">1次試験</option>
+								<option value="サンプル2">２次試験</option>
+								<option value="サンプル3">３次試験</option>
+								<option value="サンプル4">４次試験</option>
+								<option value="サンプル5">最終試験</option>
+							</select>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th>内容１</th>
+					<td>
+						<div>
+							<select name="content1">
+								<option value="サンプル1">適正</option>
+								<option value="サンプル2">筆記</option>
+								<option value="サンプル3">ディスカッション</option>
+								<option value="サンプル4">グループワーク</option>
+								<option value="サンプル5">集団面接</option>
+								<option value="サンプル6">個人面接</option>
+								<option value="サンプル7">その他</option>
+							</select>
+						</div>
+					</td>
+				</tr>
+				<tr>
+				<th>内容２</th>
+					<td>
+						<div>
+							<select name="Content2">
+								<option value="サンプル1">適正</option>
+								<option value="サンプル2">筆記</option>
+								<option value="サンプル3">ディスカッション</option>
+								<option value="サンプル4">グループワーク</option>
+								<option value="サンプル5">集団面接</option>
+								<option value="サンプル6">個人面接</option>
+								<option value="サンプル7">その他</option>
+							</select>
+						</div>
+					</td>
+					</tr>
+					<tr>
+					<th>内容３</th>
+					<td>
+						<div>
+							<select name="Content3">
+								<option value="サンプル1">適正</option>
+								<option value="サンプル2">筆記</option>
+								<option value="サンプル3">ディスカッション</option>
+								<option value="サンプル4">グループワーク</option>
+								<option value="サンプル5">集団面接</option>
+								<option value="サンプル6">個人面接</option>
+								<option value="サンプル7">その他</option>
+							</select>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th>結果通知</th>
+					<td>
+						<div>
+							何日後<input type="text" /> <select name="nomber">
+								<option value="サンプル1">本人</option>
+								<option value="サンプル2">学校</option>
+								<option value="サンプル3">電話</option>
+								<option value="サンプル1">郵送</option>
+								<option value="サンプル2">メール</option>
+								<option value="サンプル3">Web</option>
+							</select>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th>適正</th>
+					<td>
+						<div>
+							<select name="test">
+								<option value="サンプル1">SPI</option>
+								<option value="サンプル2">CAB/GAB</option>
+								<option value="サンプル3">職業適性</option>
+								<option value="サンプル4">クレペリン</option>
+								<option value="サンプル5">その他適正</option>
+							</select>
+						</div>
+					</td>
+					<th>筆記・作文</th>
+					<td>
+						<div>
+							<select name="test">
+								<option value="サンプル1">一般常識</option>
+								<option value="サンプル2">専門知識</option>
+								<option value="サンプル3">作文テーマ</option>
+							</select>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th>面接概要（ディスカッション）</th>
+					<td>
+						<div>
+							<select>
+								<option value="サンプル1">個人</option>
+								<option value="サンプル2">集団</option>
+							</select>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th>面接官</th>
+					<td>
+						<div>
+							<input type="text" />名
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th>面接時間</th>
+					<td>
+						<div>
+							<input type="text" />分
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th>GD・GWのテーマ</th>
+					<td>
+						<div>
+							<input type="text" />
+						</div>
+					</td>
+				</tr>
+			</table>
+			<center>
+				<button type="submit">登録</button>
+			</center>
+		</form>
+	</div>
+</body>
+</html>
