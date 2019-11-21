@@ -1,4 +1,4 @@
-package info.helloworld.sbmt.domain;
+package info.helloworld.sbmt.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
