@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>メイン</title>
+<title>検索</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" href="css/bootstrap.css">
 <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
@@ -22,10 +22,6 @@ a {
 	background: #a6d3c8; /*リボンの色*/
 }
 
-a:hover {
-	　text-decoration: none;
-}
-
 .ribbon7:before {
 	position: absolute;
 	content: '';
@@ -37,14 +33,17 @@ a:hover {
 }
 </style>
 <br>
-<a href="User.html" class="ribbon7" target="right">会員情報表示</a>
-<br>
-<br>
-<a href="left2.htm" class="ribbon7" target="left">申請書参照 </a>
-<br>
-<br>
-<a href="kensaku.html" class="ribbon7" target="right">書類検索 </a>
-<br>
-<br>
-<a href="logout.html" class="ribbon7" target="_top">ログアウト </a>
+<table align="center">
+	<tr>
+		<th>企業検索</th>
+		<td>
+			<div>
+				<input type="text" />
+			</div>
+		</td>
+	</tr>
+</table>
+<center>
+	<button type="submit">検索</button>
+</center>
 </html>

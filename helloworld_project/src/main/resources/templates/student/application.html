@@ -3,10 +3,34 @@
 <head>
 <meta charset="UTF-8"></meta>
 <title>申請書記入画面</title>
+<link rel="stylesheet" href="css/bootstrap.css">
+<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
 </head>
+<style>
+.box2 {
+	padding: 0.5em 1em;
+	margin: 1em 0;
+	font-weight: bold;
+	color: #6091d3; /*#6091d3文字色*/
+	background: #FFF;
+	border: solid 3px #6091d3; /*線*/
+	border-radius: 10px; /*角の丸み*/
+}
+
+.box2 h1 {
+	margin: 0;
+	padding: 0;
+}
+
+input[type="text"]:focus, texture:focus {
+	box-shadow: 0 0 7px #3498db;
+	border: 1px solid #3498db;
+}
+</style>
 <body>
 	<div>
-		<div align="center">
+		<div align="center" class="box2">
 			<h1>就職活動 申請・報告</h1>
 		</div>
 		<form th:action="@{/signup}" method="post">
@@ -255,7 +279,7 @@
 							<input type="text" />
 						</div>
 					</td>
-					
+
 				</tr>
 				<tr>
 					<th>早退</th>
@@ -351,8 +375,8 @@
 							</select>
 						</div>
 						<div>
-					
-				</tr><tr>
+				</tr>
+				<tr>
 					<th>遅刻</th>
 					<td>
 						<div>
@@ -446,8 +470,8 @@
 							</select>
 						</div>
 						<div>
-					
-				</tr><tr>
+				</tr>
+				<tr>
 					<th>欠席</th>
 					<td>
 						<div>
@@ -541,7 +565,6 @@
 							</select>
 						</div>
 						<div>
-					
 				</tr>
 				<tr>
 					<th>メモ（連絡事項・ｽｹｼﾞｭｰﾙ等）</th>
@@ -554,7 +577,7 @@
 			</table>
 			<br>
 			<center>
-			<button type="button" onclick="history.back()">戻る</button>
+				<button type="button" onclick="history.back()">戻る</button>
 				<button type="submit">登録</button>
 			</center>
 		</form>
