@@ -4,11 +4,19 @@
 <meta charset="UTF-8"></meta>
 <title>申請書記入画面</title>
 </head>
+<style>
+textarea{
+	width: 100%;
+	height: 100px;
+	resize: vertical;
+}
+</style>
 <body>
 	<div>
 		<div align="center">
 			<h1>就職活動 申請・報告</h1>
 		</div>
+		<hr>
 		<form th:action="@{/signup}" method="post">
 			<table align="center">
 				<tr>
@@ -257,10 +265,15 @@
 					</td>
 				</tr>
 				<tr>
-					<th>メモ（連絡事項・スケジュール等）</th>
+					<th>メモ</th>
 					<td>
 						<div>
-							<input type="text" />
+							<form action="//www-creators.com/rsc/receiver.php" method="post">
+								<br>
+								<textarea name="message-body" placeholder="連絡事項・スケジュール等" ></textarea>
+	
+							</form>
+							
 						</div>
 					</td>
 				</tr>
