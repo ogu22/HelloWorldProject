@@ -2,16 +2,22 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8"></meta>
+<link rel="stylesheet" href="css/bootstrap.css">
+<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
 <title>受験報告書記入画面</title>
 </head>
-<body>
+<style>
+</style>
+<body class="p-3 mb-2 bg-light">
 	<div>
 		<div align="center">
 			<h1>受験報告書</h1>
 		</div>
 		<hr>
 		<form th:action="@{/signup}" method="post">
-			<table align="center">
+			<table class="table table-borderless" align="center"
+				style="width: 65%">
 				<tr>
 					<th>申請日</th>
 					<td>
@@ -32,7 +38,8 @@
 					<th>企業名</th>
 					<td>
 						<div>
-							<input type="text" />
+							<input type="text" class="form-control" id="kigyo"
+								placeholder="企業名" />
 						</div>
 					</td>
 				</tr>
@@ -40,7 +47,7 @@
 					<th>情報仕入れ場所</th>
 					<td>
 						<div>
-							<select name="joho">
+							<select class="form-control" id="exampleFormControlSelect1">
 								<option value="サンプル1">学校斡旋</option>
 								<option value="サンプル2">斡旋サイト</option>
 								<option value="サンプル3">企業HP</option>
@@ -54,7 +61,7 @@
 				<tr>
 					<th>開催日時</th>
 					<td>
-						<div>
+						<div class="form-group">
 							<input type="date" name="calendar" max="9999-12-31"> <select
 								name="selectedate-h" id="selectedate-h">
 								<option value="00">00</option>
@@ -149,7 +156,8 @@
 					<th>受験場所</th>
 					<td>
 						<div>
-							<input type="text" />
+							<input type="text" class="form-control" id="jplace"
+								placeholder="受験場所" />
 						</div>
 					</td>
 				</tr>
@@ -157,7 +165,7 @@
 					<th>会場</th>
 					<td>
 						<div>
-							<select name="joho">
+							<select class="form-control" id="exampleFormControlSelect1">
 								<option value="サンプル1">会社（札幌）</option>
 								<option value="サンプル2">外会社（札幌）</option>
 								<option value="サンプル3">会社（東京）</option>
@@ -171,7 +179,7 @@
 					<th>試験</th>
 					<td>
 						<div>
-							<select name="test">
+							<select class="form-control" id="exampleFormControlSelect1">
 								<option value="サンプル1">1次試験</option>
 								<option value="サンプル2">２次試験</option>
 								<option value="サンプル3">３次試験</option>
@@ -185,7 +193,7 @@
 					<th>内容１</th>
 					<td>
 						<div>
-							<select name="content1">
+							<select class="form-control" id="exampleFormControlSelect1">
 								<option value="サンプル1">適正</option>
 								<option value="サンプル2">筆記</option>
 								<option value="サンプル3">ディスカッション</option>
@@ -198,10 +206,10 @@
 					</td>
 				</tr>
 				<tr>
-				<th>内容２</th>
+					<th>内容２</th>
 					<td>
 						<div>
-							<select name="Content2">
+							<select class="form-control" id="exampleFormControlSelect1">
 								<option value="サンプル1">適正</option>
 								<option value="サンプル2">筆記</option>
 								<option value="サンプル3">ディスカッション</option>
@@ -212,12 +220,12 @@
 							</select>
 						</div>
 					</td>
-					</tr>
-					<tr>
+				</tr>
+				<tr>
 					<th>内容３</th>
 					<td>
 						<div>
-							<select name="Content3">
+							<select class="form-control" id="exampleFormControlSelect1">
 								<option value="サンプル1">適正</option>
 								<option value="サンプル2">筆記</option>
 								<option value="サンプル3">ディスカッション</option>
@@ -233,7 +241,10 @@
 					<th>結果通知</th>
 					<td>
 						<div>
-							何日後<input type="text" /> <select name="nomber">
+							何日後<input type="text" class="form-control" id="afterday"
+								placeholder="何日後" />
+							宛て<select class="form-control"
+								id="exampleFormControlSelect1">
 								<option value="サンプル1">本人</option>
 								<option value="サンプル2">学校</option>
 								<option value="サンプル3">電話</option>
@@ -248,7 +259,7 @@
 					<th>適正</th>
 					<td>
 						<div>
-							<select name="test">
+							<select class="form-control" id="exampleFormControlSelect1">
 								<option value="サンプル1">SPI</option>
 								<option value="サンプル2">CAB/GAB</option>
 								<option value="サンプル3">職業適性</option>
@@ -260,7 +271,7 @@
 					<th>筆記・作文</th>
 					<td>
 						<div>
-							<select name="test">
+							<select class="form-control" id="exampleFormControlSelect1">
 								<option value="サンプル1">一般常識</option>
 								<option value="サンプル2">専門知識</option>
 								<option value="サンプル3">作文テーマ</option>
@@ -272,7 +283,7 @@
 					<th>面接概要（ディスカッション）</th>
 					<td>
 						<div>
-							<select>
+							<select class="form-control" id="exampleFormControlSelect1">
 								<option value="サンプル1">個人</option>
 								<option value="サンプル2">集団</option>
 							</select>
@@ -283,7 +294,8 @@
 					<th>面接官</th>
 					<td>
 						<div>
-							<input type="text" />名
+							<input type="text" class="form-control" id="interviewer"
+								placeholder="面接官" />
 						</div>
 					</td>
 				</tr>
@@ -291,7 +303,8 @@
 					<th>面接時間</th>
 					<td>
 						<div>
-							<input type="text" />分
+							<input type="text" class="form-control" id="interviewtime"
+								placeholder="面接時間" />
 						</div>
 					</td>
 				</tr>
@@ -299,13 +312,14 @@
 					<th>GD・GWのテーマ</th>
 					<td>
 						<div>
-							<input type="text" />
+							<input type="text" class="form-control" id="thema"
+								placeholder="GD・GWのテーマ" />
 						</div>
 					</td>
 				</tr>
 			</table>
 			<center>
-				<button type="submit">登録</button>
+				<button type="button" class="btn btn-primary">登録</button>
 			</center>
 		</form>
 	</div>
