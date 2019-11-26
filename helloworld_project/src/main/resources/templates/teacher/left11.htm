@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>メイン</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="css/bootstrap.css">
+<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+</head>
+<style>
+a {
+	text-decoration: none;
+}
+.ribbon7 {
+	display: inline-block;
+	position: relative;
+	padding: 15px 20px;
+	font-size: 18px; /*フォントサイズ*/
+	color: #000000; /*フォントカラー*/
+	background: #a6d3c8; /*リボンの色*/
+}
+.ribbon7:before {
+	position: absolute;
+	content: '';
+	top: 100%;
+	left: 0;
+	border: none;
+	border-bottom: solid 15px transparent;
+	border-right: solid 20px rgb(149, 158, 155); /*折り返し部分*/
+}
+</style>
+<br>
+<a href="application.html" class="ribbon7" target="_top">申請書記入</a>
+<br>
+<br>
+<a href="report1.html" class="ribbon7" target="_top">報告書記入</a>
+<br>
+<br>
+<a href="#" class="ribbon7" target="right">編集 </a>
+</html>
