@@ -12,6 +12,7 @@
 a {
 	text-decoration: none;
 }
+
 .ribbon7 {
 	display: inline-block;
 	position: relative;
@@ -20,6 +21,7 @@ a {
 	color: #000000; /*フォントカラー*/
 	background: #a6d3c8; /*リボンの色*/
 }
+
 .ribbon7:before {
 	position: absolute;
 	content: '';
@@ -31,17 +33,19 @@ a {
 }
 </style>
 <br>
+<br>
 <table align="center">
 	<tr>
 		<th>企業検索</th>
 		<td>
 			<div>
-				<input type="text" />
+				<input type="text" size="30" name="指定された値" value="" /> <input
+					type="submit" value="Search!" />
 			</div>
 		</td>
 	</tr>
 </table>
-<center>
-	<button type="submit">検索</button>
-</center>
+
+
+
 </html>
