@@ -13,43 +13,109 @@ a {
 	text-decoration: none;
 }
 
-.ribbon7 {
-	display: inline-block;
-	position: relative;
-	padding: 15px 20px;
-	font-size: 18px; /*フォントサイズ*/
-	color: #000000; /*フォントカラー*/
-	background: #a6d3c8; /*リボンの色*/
-}
-
 a:hover {
-	text-decoration: none;
+	　text-decoration: none;
 }
 
-.ribbon7:before {
+.aaa {
+	position: relative;
+	left: 10px;
+}
+
+@charset "utf-8";
+
+.accordion-container {
+	position: relative;
+	width: 100%;
+	border: 1px solid #0079c1;
+	border-top: none;
+	outline: 0;
+	cursor: pointer
+}
+
+.accordion-container .article-title {
+	display: block;
+	position: relative;
+	margin: 0;
+	padding: 0.625em 0.625em 0.625em 2em;
+	font-size: 1.25em;
+	font-weight: normal;
+	color: #fff;
+	background: #000;
+	cursor: pointer;
+}
+
+.accordion-container .article-title:hover, .accordion-container .article-title:active,
+	.accordion-container .content-entry.open .article-title {
+	background-color: #00aaa7;
+	color: white;
+}
+
+.accordion-container .article-title:hover i:before, .accordion-container .article-title:hover i:active,
+	.accordion-container .content-entry.open i {
+	color: white;
+}
+
+.article-title {
+	position: relative;
+	left: 10px;
+}
+
+.article-title:after {
+	content: "";
 	position: absolute;
-	content: '';
-	top: 100%;
-	left: 0;
-	border: none;
-	border-bottom: solid 15px transparent;
-	border-right: solid 20px rgb(149, 158, 155); /*折り返し部分*/
+	right: 25px;
+	top: 38%;
+	transition: all 0.2s ease-in-out;
+	display: block;
+	width: 8px;
+	height: 8px;
+	border-top: solid 2px #fff;
+	border-right: solid 2px #fff;
+	-webkit-transform: rotate(135deg);
+	transform: rotate(135deg);
+}
+
+.article-title.open:after {
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	top: 45%;
+}
+
+.accordion-content {
+	display: none;
+	padding-left: 2.3125em;
+}
+
+/* CSS for CodePen */
+.accordion-container {
+	width: 300px;
+	margin: 1.875em auto;
+}
+
+ul, ol {
+	padding: 0;
+	position: relative;
+}
+
+ul li, ol li {
+	color: #2d8fdd;
+	border-left: solid 6px #2d8fdd; /*左側の線*/
+	background: #f1f8ff; /*背景色*/
+	margin-bottom: 3px; /*下のバーとの余白*/
+	line-height: 1.5;
+	padding: 0.5em;
+	list-style-type: none !important; /*ポチ消す*/
 }
 </style>
-<br>
-<a href="User1.html" class="ribbon7" target="right">会員情報 </a>
-<br>
-<br>
-<a href="left2.htm" class="ribbon7" target="left"><font size="2">承認済書類一覧</font>
-</a>
-<br>
-<br>
-<a href="kensaku1.html" class="ribbon7" target="right">書類検索 </a>
-<br>
-<br>
-<a href="logout.html" class="ribbon7" target="_top"><font size="2">未承認書類一覧</font>
-</a>
-<br>
-<br>
-<a href="logout.html" class="ribbon7" target="_top">ログアウト </a>
+<ul>
+	<li><a href="User1.html" class="aaa" target="right">会員情報 </a></li>
+
+	<li><a href="left2.htm" target="left">承認済書類一覧
+	</a></li>
+	<li><a href="kensaku1.html" target="right">書類検索 </a></li>
+	<li><a href="logout.html" target="_top">未承認書類一覧
+	</a></li>
+	<li><a href="logout.html" target="_top">ログアウト </a></li>
+</ul>
 </html>
