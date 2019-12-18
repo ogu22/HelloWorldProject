@@ -1,4 +1,4 @@
-package info.helloworld.sbmt.domain;
+package info.helloworld.sbmt.repository;
 
 public class ApplicationFormRepository {
 

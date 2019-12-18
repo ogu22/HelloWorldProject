@@ -1,5 +1,5 @@
 package info.helloworld.sbmt.service;
 
-public class SearchUser {
+public class UserServiceImpl {
 
 }
